@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Movie
+    Teams
 @endsection()
 
 @section('content')

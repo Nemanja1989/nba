@@ -22,3 +22,10 @@ Route::get('/teams', 'TeamsController@index')->name('teams');
 Route::get('/teams/{id}', 'TeamsController@show')->name('team');
 
 Route::get('/players/{id}', 'PlayersController@show')->name('player');
+
+Route::get('/register', 'RegisterController@create')->name('register');
+Route::post('/register', 'RegisterController@store')->name('register-store');
+
+Route::get('/login', 'LoginController@create')->name('login');
+Route::post('/login', 'LoginController@store')->name('login-store');
+Route::get('/logout', 'LoginController@destroy')->name('logout');

@@ -23,6 +23,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('teams') }}">teams</a></li>
+
+                <!-- if loged in you don't need to register -->
+                @if (!Auth::check())
+                    <li><a href="{{ route('register') }}">Register User</a></li>
+                @endif
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -31,7 +36,13 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
+
+                @if (!Auth::check())
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                @endif
+                @if (Auth::check())
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                @endif
             </ul>
         </div>
     </div>

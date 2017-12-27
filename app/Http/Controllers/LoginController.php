@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+
+    //if you are logged in than you will be redirected to teams
+    public function __construct(){
+        $this->middleware('guest');
+    }
+
     public function create(){
         return view('login.create');
     }

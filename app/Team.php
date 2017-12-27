@@ -15,4 +15,8 @@ class Team extends \Eloquent
     public function players() {
         return $this->hasMany(Player::class);
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

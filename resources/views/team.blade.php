@@ -13,6 +13,20 @@
             <p> City: {{$team->city}} | {{ $team->address}} | {{$team->email}} </p>
         </div>
 
+        <h2>List of Comments:</h2>
+
+
+        @foreach ($team->comments as $comment)
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{$comment->user->name}}</h3>
+                    <p></p>
+                    <p>{{$comment->content}}</p>
+                </div>
+
+            </div>
+        @endforeach
+
 
 
             <h2>List of Players:</h2>

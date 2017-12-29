@@ -51,6 +51,12 @@
 
 <!-- popuni specificno svaka stranica -->
 <div class="container">
+    @if($message = session('messageError'))
+        <div class="alert alert-danger" style="background-color: #ce8483">{{$message}}</div>
+    @endif
+    @if($message = session('messageSuccess'))
+        <div class="alert alert-success">{{$message}}</div>
+    @endif
     @yield('content')
 </div>
 

@@ -10,6 +10,7 @@ class LoginController extends Controller
     //if you are logged in than you will be redirected to teams
     public function __construct(){
         $this->middleware('guest');
+        $this->middleware('checkVerified', ['only' => ['store']]);
     }
 
     public function create(){

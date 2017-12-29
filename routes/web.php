@@ -34,3 +34,5 @@ Route::post('/comment', 'CommentsController@store')->name('commentStore');
 
 //verify route
 Route::get('/register/verify/{id}', 'RegisterController@verify')->name('verifyUser');
+
+Route::get('/comment/forbidden', 'CommentsController@forbidden')->name('forbiddenCommentWords');

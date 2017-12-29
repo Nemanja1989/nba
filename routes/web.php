@@ -30,5 +30,7 @@ Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login', 'LoginController@store')->name('login-store');
 Route::get('/logout', 'LoginController@destroy')->name('logout');
 
+Route::post('/comment', 'CommentsController@store')->name('commentStore');
+
 //verify route
 Route::get('/register/verify/{id}', 'RegisterController@verify')->name('verifyUser');

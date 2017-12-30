@@ -39,3 +39,5 @@ Route::get('/comment/forbidden', 'CommentsController@forbidden')->name('forbidde
 
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{id}', 'NewsController@show')->name('oneNews');
+Route::get('/news/team/{id}', 'NewsController@teamNews')->name('teamNews');
+

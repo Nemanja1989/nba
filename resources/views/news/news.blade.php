@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Teams
+    News
 @endsection()
 
 @section('content')

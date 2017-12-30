@@ -36,3 +36,6 @@ Route::post('/comment', 'CommentsController@store')->name('commentStore');
 Route::get('/register/verify/{id}', 'RegisterController@verify')->name('verifyUser');
 
 Route::get('/comment/forbidden', 'CommentsController@forbidden')->name('forbiddenCommentWords');
+
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{id}', 'NewsController@show')->name('oneNews');

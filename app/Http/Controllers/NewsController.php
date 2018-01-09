@@ -10,7 +10,10 @@ use App\Team;
 class NewsController extends Controller
 {
     public function index(){
-        $news = News::getAllNews();
+        $news = News::with('user')
+            ->latest()
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
 
         return view('news.news',compact('news'));
     }
@@ -29,5 +32,32 @@ class NewsController extends Controller
 
         //sending team as parameter is not good but works
         return view('news.news_team',compact('teamNews', 'team'));
+    }
+
+    public function create() {
+        $teams = Team::all();
+
+        return view('news.create', compact('teams'));
+    }
+
+    public function store(){
+        $this->validate(\request(), [
+                'title'     => 'required',
+                'content'   => 'required'
+                ]);
+
+        $news = new News();
+
+        $news->title = \request('title');
+        $news->content = \request('content');
+        $news->user_id = auth()->user()->id;
+
+        $news->save();
+
+        $news->teams()->attach(\request('teams'));
+
+        session()->flash('success_message', 'Thank you for publishing article on www.nba.com');
+
+        return redirect('news');
     }
 }

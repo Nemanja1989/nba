@@ -22,8 +22,9 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('teams') }}">teams</a></li>
-                <li><a href="{{ route('news') }}">news</a></li>
+                <li><a href="{{ route('teams') }}">Teams</a></li>
+                <li><a href="{{ route('news') }}">News</a></li>
+                <li><a href="{{ route('newsCreate') }}">Create News</a></li>
 
                 <!-- if loged in you don't need to register -->
                 @if (!Auth::check())

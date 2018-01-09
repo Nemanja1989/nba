@@ -38,6 +38,10 @@ Route::get('/register/verify/{id}', 'RegisterController@verify')->name('verifyUs
 Route::get('/comment/forbidden', 'CommentsController@forbidden')->name('forbiddenCommentWords');
 
 Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/create', 'NewsController@create')->name('newsCreate');
 Route::get('/news/{id}', 'NewsController@show')->name('oneNews');
 Route::get('/news/team/{id}', 'NewsController@teamNews')->name('teamNews');
+
+
+Route::post('/news/store', 'NewsController@store')->name('newsStore');
 
